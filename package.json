@@ -1,0 +1,50 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "@visx/axis": "1.17.1",
+    "@visx/curve": "1.7.0",
+    "@visx/gradient": "1.7.0",
+    "@visx/marker": "1.17.1",
+    "@visx/scale": "1.14.0",
+    "@visx/shape": "1.17.1",
+    "@visx/text": "1.17.1",
+    "date-fns": "2.23.0",
+    "history": "4.10.1",
+    "jotai": "1.2.2",
+    "lodash.upperfirst": "4.3.1",
+    "qs": "6.10.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-lazy-load-image-component": "1.5.1",
+    "react-query": "3.19.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "2.2.7",
+    "twin.macro": "2.6.2"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
