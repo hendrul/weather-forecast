@@ -10,7 +10,7 @@ export const ForecastCard = (props) => {
   const time = date ? format(new Date(date), "h aa") : date;
   return (
     <div
-      tw="flex flex-col transition duration-100 ease-in-out transform hover:(-translate-y-1 scale-110 shadow-lg duration-75) active:(scale-100) cursor-pointer items-center justify-center w-24 h-28 border-2 border-orange-600 font-thin text-sm text-white bg-gray-600 rounded-md"
+      tw="flex flex-col transition duration-100 ease-in-out transform hover:(-translate-y-1 scale-110 shadow-lg duration-75) active:(scale-100) cursor-pointer items-center justify-center w-24 h-28 border-orange-600 hover:border-2 font-thin text-sm text-white bg-gray-600 rounded-md"
       {...restProps}
     >
       <p>{day || time}</p>
