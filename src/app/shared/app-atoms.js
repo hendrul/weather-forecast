@@ -19,17 +19,17 @@ export const locationAtom = atomWithQuery({
 });
 
 const cityValueAtom = atom();
-// cityValueAtom.onMount = (setAtom) => {
-//   const getCityParam = (search) => {
-//     const { city } = qs.parse(search, {
-//       ignoreQueryPrefix: true
-//     });
-//     return city ? upperfirst(city) : city;
-//   };
-//   const setCity = (search) => setAtom((prev) => getCityParam(search) || prev);
-//   setCity(history.location.search);
-//   return history.listen(({ search }) => setCity(search));
-// };
+cityValueAtom.onMount = (setAtom) => {
+  const getCityParam = (search) => {
+    const { city } = qs.parse(search, {
+      ignoreQueryPrefix: true
+    });
+    return city ? upperfirst(city) : city;
+  };
+  const setCity = (search) => setAtom((prev) => getCityParam(search) || prev);
+  setCity(history.location.search);
+  return history.listen(({ search }) => setCity(search));
+};
 export const cityAtom = atom((get) => {
   return get(cityValueAtom) || get(locationAtom)?.city || "Washington";
 });
