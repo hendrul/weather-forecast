@@ -1,9 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "twin.macro";
-
-import Spinner from "app/shared/spinner";
 
 export const ForecastCard = (props) => {
   const { day, date, icon, min, max, description = "", ...restProps } = props;
@@ -14,10 +11,9 @@ export const ForecastCard = (props) => {
       {...restProps}
     >
       <p>{day || time}</p>
-      <LazyLoadImage
+      <img
         width="48px"
         height="48px"
-        placeholder={<Spinner />}
         src={`http://openweathermap.org/img/wn/${icon}.png`}
         alt={description}
       />

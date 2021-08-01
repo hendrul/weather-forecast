@@ -18,17 +18,16 @@ export const locationAtom = atomWithQuery({
   }
 });
 
-const cityValueAtom = atom();
+export const cityValueAtom = atom();
 cityValueAtom.onMount = (setAtom) => {
-  const getCityParam = (search) => {
-    const { city } = qs.parse(search, {
+  const setCityParam = (search) => {
+    let { city } = qs.parse(search, {
       ignoreQueryPrefix: true
     });
-    return city ? upperfirst(city) : city;
+    if (city) setAtom(upperfirst(city));
   };
-  const setCity = (search) => setAtom((prev) => getCityParam(search) || prev);
-  setCity(history.location.search);
-  return history.listen(({ search }) => setCity(search));
+  setCityParam(history.location.search);
+  return history.listen(({ search }) => setCityParam(search));
 };
 export const cityAtom = atom((get) => {
   return get(cityValueAtom) || get(locationAtom)?.city || "Washington";
