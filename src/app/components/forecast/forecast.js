@@ -46,7 +46,6 @@ export default function () {
   const forecastData = useAtomValue(reducedForecastAtom);
   const setDaySelected = useUpdateAtom(daySelectedAtom);
   return (
-    // <ForecastGraph />
     <Switch>
       <Route
         path="/"
